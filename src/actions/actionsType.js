@@ -1,1 +1,5 @@
 export const CREATE_USER = 'CREATE_USER';
+export const SELECTED_USER = 'SELECTED_USER';
+export const ADD_CONTACT = 'ADD_CONTACT';
+export const EDIT_CONTACT = 'EDIT_CONTACT'
+export const UPDATE_CONTACT = 'UPDATE_CONTACT';

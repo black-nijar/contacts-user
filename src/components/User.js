@@ -1,18 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
+import { selectedUser } from '../actions/actions';
 
-const User = ({ data: { users } }) => {
-  console.log("data", users);
+const User = () => {
   return (
     <div>
-      <h4>Current User </h4>
+      {/* <h4>Current User </h4>
       {users.map((user) => user.userName).length > 0 ? (
-        <select>
+        <select onChange={(e) => selectedUser(e.target.value)}>
           {users.map((user) => (
             <option key={user.userId}>{user.userName}</option>
           ))}
         </select>
-      ) : null}
+      ) : "No one"} */}
     </div>
   );
 };
@@ -22,4 +22,4 @@ const mapStateToProps = (state) => {
     data: state.data,
   };
 };
-export default connect(mapStateToProps)(User);
+export default connect(mapStateToProps, {selectedUser})(User);
