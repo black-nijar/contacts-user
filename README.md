@@ -1,4 +1,4 @@
 # React Contact ui
 ```
-cd contact-user
+cd contacts-user
 npm install & npm start
