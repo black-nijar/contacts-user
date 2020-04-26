@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectedUser } from "../actions/actions";
+import { selectedUser, contactDetail } from "../actions/actions";
 
-const User = ({ rootUsers: { users }, selectedUser }) => {
+const User = ({ rootUsers: { users }, selectedUser, contactDetail }) => {
   const handleChange = (e) => {
     const currentUser = users.filter(
       (user) => user.userName === e.target.value
@@ -14,7 +14,9 @@ const User = ({ rootUsers: { users }, selectedUser }) => {
         userName,
         userId,
       };
+      let clear = []
       selectedUser(userDetail);
+      contactDetail(1,clear);
     }
   };
   return (
@@ -27,7 +29,9 @@ const User = ({ rootUsers: { users }, selectedUser }) => {
       </select> */}
       {users.map((user) => user.userName).length > 0 ? (
         <select onChange={handleChange}>
+        <option value=''>Default</option>
           {users.map((user) => (
+            
             <option key={user.userId}>{user.userName}</option>
           ))}
         </select>
@@ -44,4 +48,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { selectedUser })(User);
+export default connect(mapStateToProps, { selectedUser, contactDetail })(User);
