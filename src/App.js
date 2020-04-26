@@ -9,10 +9,11 @@ import ContactDetail from "./components/ContactDetail";
 
 function App() {
   return (
-    <div className="ui container">
+    <div className="container">
       <div className="displayContacts">
         <div>
           <CreateUser />
+          <br/>
           <User />
           <AddContact />
           <SearchContact />

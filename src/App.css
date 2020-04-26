@@ -3,6 +3,9 @@
   justify-content: space-around;
 }
 
+.vertical-divider {
+  border-right: 1px dashed #333;
+}
 .contacts {
   display: flex;
   flex-direction: row;
@@ -53,4 +56,7 @@
 .detail {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  background-color: rgb(218, 218, 218);
+  border-radius: 10px;
 }

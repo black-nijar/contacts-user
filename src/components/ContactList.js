@@ -4,13 +4,14 @@ import { editContact, contactDetail } from "../actions/actions";
 
 const ContactList = ({ contacts, editContact, contactDetail, data }) => {
   const { contactId, contactName, company } = contacts;
-  console.log("CON", contacts);
+
   return (
-    <div className="card">
+    <div className="card" style={{ marginTop: "10px" }}>
       <div className="contacts" onClick={() => contactDetail(contactId, data)}>
         <div className="contactDetail">
           <h5 className="contactName">{contactName}</h5>
         </div>
+        <div className="vertical-divider"></div>
         <h5 className="company">{company}</h5>
       </div>
       <button

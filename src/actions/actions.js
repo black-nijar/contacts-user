@@ -8,7 +8,9 @@ import {
   SEARCH_CONTACT,
 } from "./actionsType";
 
-// CREATE
+
+
+// CREATE User
 export const createUser = (userData) => {
   return {
     type: CREATE_USER,
@@ -17,11 +19,10 @@ export const createUser = (userData) => {
 };
 
 // SELECTD USER
-export const selectedUser = (userId) => {
-  console.log("Select", userId);
+export const selectedUser = (user) => {
   return {
     type: SELECTED_USER,
-    payload: userId,
+    payload: user,
   };
 };
 
@@ -51,7 +52,6 @@ export const updateContact = (data) => {
 
 // SELECT CONTACT
 export const contactDetail = (contactId, contacts) => {
-   console.log("ID", contactId, contacts);
   return {
     type: CONTACT_DETAIL,
     payload: {contactId, contacts},

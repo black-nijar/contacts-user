@@ -15,6 +15,7 @@ export class AddContact extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
+    const { userId } = this.props.currentUser;
     let contactName = this.name.value;
     let emailId = this.emailId.value;
     let phoneNumber = this.number.value;
@@ -22,6 +23,7 @@ export class AddContact extends Component {
     let company = this.company.value;
     let contactId = new Date().getTime();
     let contactDetail = {
+      userId,
       contactName,
       emailId,
       phoneNumber,
@@ -39,6 +41,7 @@ export class AddContact extends Component {
     this.hideModal();
   };
   render() {
+    const { userId } = this.props.currentUser;
     return (
       <main>
         <Modal show={this.state.show}>
@@ -46,6 +49,7 @@ export class AddContact extends Component {
             <div>
               <label htmlFor="full Name">Full name :</label>
               <input
+                autoFocus={true}
                 type="text"
                 placeholder="Contact name"
                 ref={(input) => (this.name = input)}
@@ -110,19 +114,33 @@ export class AddContact extends Component {
             </div>
           </form>
         </Modal>
-        <div style={{ textAlign: "center" }}>
-          <h4>Click here to Add Contact</h4>
-          <button
-            type="button"
-            onClick={this.showModal}
-            className="btn btn-primary"
+        {userId ? (
+          <div
+            style={{
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "row",
+            }}
           >
-            Add Contact
-          </button>
-        </div>
+            <h4>Click here to </h4>
+            <button
+              type="button"
+              onClick={this.showModal}
+              className="btn btn-primary"
+            >
+              Add Contact
+            </button>
+          </div>
+        ) : null}
       </main>
     );
   }
 }
 
-export default connect(null, { addContact })(AddContact);
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.selectedUser,
+  };
+};
+
+export default connect(mapStateToProps, { addContact })(AddContact);
