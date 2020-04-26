@@ -4,7 +4,6 @@ import { updateContact } from "../actions/actions";
 
 export class EditContact extends Component {
   handleSubmit = (e) => {
-  
     e.preventDefault();
     let newContactName = this.name.value;
     let newEmailId = this.emailId.value;
@@ -24,22 +23,17 @@ export class EditContact extends Component {
   };
   render() {
     const {
-      contact: {
-        contactName,
-        emailId,
-        phoneNumber,
-        company,
-        address,
-      },
+      contact: { contactName, emailId, phoneNumber, company, address },
     } = this.props;
     return (
       <div className="form">
-        <form className="ui form" onSubmit={this.handleSubmit}>
+        <form className="form" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="full Name">Full name :</label>
             <input
               defaultValue={contactName}
               type="text"
+              className="form-control"
               placeholder="Contact name"
               ref={(input) => (this.name = input)}
               required
@@ -49,6 +43,7 @@ export class EditContact extends Component {
             <label htmlFor="email">Email :</label>
             <input
               defaultValue={emailId}
+              className="form-control"
               type="email"
               placeholder="Email ID"
               ref={(input) => (this.emailId = input)}
@@ -59,6 +54,7 @@ export class EditContact extends Component {
             <label htmlFor="number">Phone Number :</label>
             <input
               defaultValue={phoneNumber}
+              className="form-control"
               type="number"
               placeholder="Phone number"
               ref={(input) => (this.number = input)}
@@ -68,6 +64,7 @@ export class EditContact extends Component {
           <div>
             <label htmlFor="company">Company :</label>
             <input
+              className="form-control"
               defaultValue={company}
               type="text"
               placeholder="Company"
@@ -78,6 +75,7 @@ export class EditContact extends Component {
           <div>
             <label htmlFor="address">Address :</label>
             <input
+              className="form-control"
               defaultValue={address}
               type="text"
               placeholder="Contact"
@@ -86,7 +84,7 @@ export class EditContact extends Component {
             />
           </div>
           <br />
-          <button type="submit" className="ui button">
+          <button type="submit" className="btn btn-secondary">
             Update Contact
           </button>
         </form>

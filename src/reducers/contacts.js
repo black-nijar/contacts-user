@@ -2,10 +2,12 @@ import {
   ADD_CONTACT,
   EDIT_CONTACT,
   UPDATE_CONTACT,
+  CONTACT_DETAIL,
 } from "../actions/actionsType";
 
 const initState = {
   contacts: [],
+  selectedContact: [],
 };
 export const contacts = (state = initState, action) => {
   switch (action.type) {
@@ -28,12 +30,12 @@ export const contacts = (state = initState, action) => {
       };
     case UPDATE_CONTACT:
       const {
-      contactId,
-      newContactName,
-      newEmailId,
-      newPhoneNumber,
-      newAddress,
-      newCompany,
+        contactId,
+        newContactName,
+        newEmailId,
+        newPhoneNumber,
+        newAddress,
+        newCompany,
       } = action.payload;
       return {
         ...state,
@@ -51,6 +53,9 @@ export const contacts = (state = initState, action) => {
             : contact
         ),
       };
+    case CONTACT_DETAIL:
+      console.log('SELE RED')
+      return state.selectedContact;
     default:
       return state;
   }

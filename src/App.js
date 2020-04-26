@@ -4,6 +4,7 @@ import CreateUser from "./components/CreateUser";
 import AddContact from "./components/AddContact";
 import List from "./components/List";
 import './App.css'
+import SearchContact from "./components/SearchContact";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <CreateUser />
       <User />
       <AddContact />
+      <SearchContact/>
       <List />
     </div>
   );

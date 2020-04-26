@@ -3,12 +3,14 @@
   justify-content: space-around;
 }
 
-.list {
+.card {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 10px;
   margin-right:20px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .contactDetail {
@@ -16,26 +18,31 @@
   flex-direction: column;
   
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.App-link {
-  color: #61dafb;
+.modal-main {
+  position:fixed;
+  background: white;
+  width: 90%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  border-radius: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }

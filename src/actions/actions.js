@@ -4,6 +4,8 @@ import {
   ADD_CONTACT,
   EDIT_CONTACT,
   UPDATE_CONTACT,
+  CONTACT_DETAIL,
+  SEARCH_CONTACT,
 } from "./actionsType";
 
 // CREATE
@@ -40,9 +42,25 @@ export const editContact = (id) => {
 };
 
 // UPDATE CONTACT
-export const updateContact = data => {
+export const updateContact = (data) => {
   return {
     type: UPDATE_CONTACT,
-    payload: data
+    payload: data,
+  };
+};
+
+// SELECT CONTACT
+export const contactDetail = (contactId) => {
+   console.log("ID", contactId);
+  return {
+    type: CONTACT_DETAIL,
+    payload: contactId,
+  };
+};
+
+export const searchContact = (searchText, contacts) => {
+  return {
+    type: SEARCH_CONTACT,
+    payload: {searchText, contacts}
   }
 }
