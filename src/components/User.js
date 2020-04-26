@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectedUser } from '../actions/actions';
+import { selectedUser } from "../actions/actions";
 
 const User = () => {
   return (
@@ -22,4 +22,4 @@ const mapStateToProps = (state) => {
     data: state.data,
   };
 };
-export default connect(mapStateToProps, {selectedUser})(User);
+export default connect(mapStateToProps, { selectedUser })(User);

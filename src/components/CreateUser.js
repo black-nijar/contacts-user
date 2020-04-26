@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { createUser } from '../actions/actions';
+import { connect } from "react-redux";
+import { createUser } from "../actions/actions";
 
 export class CreateUser extends Component {
   // handleSubmit = (e) => {

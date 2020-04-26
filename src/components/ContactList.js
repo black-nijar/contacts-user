@@ -2,29 +2,34 @@ import React from "react";
 import { connect } from "react-redux";
 import { editContact, contactDetail } from "../actions/actions";
 
-const ContactList = ({ contacts, editContact }) => {
+const ContactList = ({ contacts, editContact, contactDetail, data }) => {
   const { contactId, contactName, company } = contacts;
-
+  console.log("CON", contacts);
   return (
-    <div>
-      <div className="card" onClick={() => contactDetail(contactId)}>
+    <div className="card">
+      <div className="contacts" onClick={() => contactDetail(contactId, data)}>
         <div className="contactDetail">
-          <h4 className="contactName">{contactName}</h4>
+          <h5 className="contactName">{contactName}</h5>
         </div>
-        <h4 className="company">{company}</h4>
-        <button
-          type="submit"
-          className="btn btn-secondary"
-          onClick={() => editContact(contactId)}
-        >
-          Edit
-        </button>
+        <h5 className="company">{company}</h5>
       </div>
+      <button
+        type="submit"
+        className="btn btn-secondary"
+        onClick={() => editContact(contactId)}
+      >
+        Edit
+      </button>
     </div>
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    data: state.data.contacts,
+  };
+};
 
-export default connect(null, { editContact, contactDetail })(
+export default connect(mapStateToProps, { editContact, contactDetail })(
   ContactList
 );

@@ -94,9 +94,7 @@ export class AddContact extends Component {
               />
             </div>
             <br />
-           
             <div className="btn-group">
-            
               <div>
                 <button className="btn btn-primary">Add Contact</button>
               </div>
@@ -113,7 +111,7 @@ export class AddContact extends Component {
           </form>
         </Modal>
         <div style={{ textAlign: "center" }}>
-         <h4>Click here to Add Contact</h4>
+          <h4>Click here to Add Contact</h4>
           <button
             type="button"
             onClick={this.showModal}

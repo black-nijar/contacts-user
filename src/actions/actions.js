@@ -50,11 +50,11 @@ export const updateContact = (data) => {
 };
 
 // SELECT CONTACT
-export const contactDetail = (contactId) => {
-   console.log("ID", contactId);
+export const contactDetail = (contactId, contacts) => {
+   console.log("ID", contactId, contacts);
   return {
     type: CONTACT_DETAIL,
-    payload: contactId,
+    payload: {contactId, contacts},
   };
 };
 

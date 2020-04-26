@@ -4,11 +4,11 @@ import EditContact from "./EditContact";
 import ContactList from "./ContactList";
 
 const List = ({ data: { contacts }, filteredContact }) => {
-  const contactList = filteredContact.length > 0  ? filteredContact : contacts
+  const contactList = filteredContact.length > 0 ? filteredContact : contacts;
   return (
     <div>
       <div className="details">
-        <h4 >Basic info </h4>
+        <h4>Basic info </h4>
         <h4>Company</h4>
       </div>
       {contactList.map((contact, i) => (
@@ -17,11 +17,7 @@ const List = ({ data: { contacts }, filteredContact }) => {
             <EditContact contact={contact} key={contact.contactId} />
           ) : (
             <div>
-              <ContactList
-                index={i}
-                key={contact.contactId}
-                contacts={contact}
-              />
+              <ContactList key={contact.contactId} contacts={contact} />
             </div>
           )}
         </div>
@@ -33,7 +29,7 @@ const List = ({ data: { contacts }, filteredContact }) => {
 const mapStateToProps = (state) => {
   return {
     data: state.data,
-    filteredContact: state.filteredContact
+    filteredContact: state.filteredContact,
   };
 };
 export default connect(mapStateToProps)(List);

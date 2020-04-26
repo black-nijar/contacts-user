@@ -53,9 +53,9 @@ export const contacts = (state = initState, action) => {
             : contact
         ),
       };
-    case CONTACT_DETAIL:
-      console.log('SELE RED')
-      return state.selectedContact;
+    // case CONTACT_DETAIL:
+    //   console.log('SELE RED')
+    //   return state.selectedContact;
     default:
       return state;
   }

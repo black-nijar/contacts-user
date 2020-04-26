@@ -1,12 +1,11 @@
-import React from 'react'
-import { connect } from 'react-redux';
-import { searchContact } from '../actions/actions';
+import React from "react";
+import { connect } from "react-redux";
+import { searchContact } from "../actions/actions";
 
-const SearchContact = ({ searchContact, data: {contacts} }) => {
-  console.log("contacts",contacts)
+const SearchContact = ({ searchContact, data: { contacts } }) => {
   return (
-    <div>
-        <form className="form">
+    <div className="search">
+      <form className="form">
         <div>
           <label htmlFor="searchContact">Search Contact</label>
           <input
@@ -18,11 +17,11 @@ const SearchContact = ({ searchContact, data: {contacts} }) => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 const mapStateToProps = (state) => {
   return {
     data: state.data,
   };
 };
-export default connect(mapStateToProps, {searchContact})(SearchContact)
+export default connect(mapStateToProps, { searchContact })(SearchContact);
